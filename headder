@@ -1,0 +1,4 @@
+X-ServiceNow-Source:Notification-cb3d87a2c3131000b959fd251eba8f81
+List-Unsubscribe:<mailto:?body=Sending+this+email+with+the+predefined+content+in+the+subject+and+body+will+unsubscribe+you+from+the+notification.%0D%0A%0D%0AUnsubscribe%3A%7B%22id%22%3A%22cb3d87a2c3131000b959fd251eba8f81%22%2C%22token%22%3A%22c797e62132%22%7D
+ &subject=Unsubscribe+from+%22Asset+Restocking%22>
+X-ServiceNow-SysEmail-Version:2
