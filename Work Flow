@@ -1,0 +1,60 @@
+┌──────────────────────────────────────────┐
+│  CATALOG ITEM                            │
+│  Fujitsu 1TB Hybrid SSD Restocking       │
+│  Request                                 │
+└────────────────────┬─────────────────────┘
+                     ↓
+┌──────────────────────────────────────────┐
+│ TRIGGER                                 │
+│ Service Catalog → Requested Item         │
+│ Catalog Item = Fujitsu 1TB Hybrid SSD   │
+└────────────────────┬─────────────────────┘
+                     ↓
+┌──────────────────────────────────────────┐
+│ GET CATALOG VARIABLES                     │
+│ • Requester                              │
+│ • Quantity Required                      │
+│ • Reason for Restocking                  │
+│ • Required By                            │
+│ • Priority                               │
+└────────────────────┬─────────────────────┘
+                     ↓
+┌──────────────────────────────────────────┐
+│ IF / ELSE                                │
+│ Is Quantity Required > 5?                │
+└───────────────┬───────────────────┬──────┘
+                │ YES               │ NO
+                ↓                   ↓
+       ┌─────────────────┐   ┌─────────────────┐
+       │ HIGH QUANTITY   │   │ NORMAL REQUEST  │
+       │ Approval        │   │ Processing      │
+       └────────┬────────┘   └────────┬────────┘
+                │                     │
+                ↓                     │
+       ┌─────────────────┐             │
+       │ Manager         │             │
+       │ Approval        │             │
+       └────────┬────────┘             │
+                │                     │
+                └──────────┬──────────┘
+                           ↓
+              ┌─────────────────────────┐
+              │ UPDATE REQUEST          │
+              │ State = Approved        │
+              └────────────┬────────────┘
+                           ↓
+              ┌─────────────────────────┐
+              │ SEND EMAIL NOTIFICATION │
+              │ Restocking Request for  │
+              │ Fujitsu 1TB Hybrid SSD  │
+              └────────────┬────────────┘
+                           ↓
+              ┌─────────────────────────┐
+              │ PROCUREMENT / INVENTORY │
+              │ Processing               │
+              └────────────┬────────────┘
+                           ↓
+              ┌─────────────────────────┐
+              │ UPDATE REQUEST          │
+              │ State = Fulfilled       │
+              └─────────────────────────┘
